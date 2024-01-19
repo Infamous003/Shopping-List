@@ -14,11 +14,20 @@ function btnClicked() {
 
   listItem.appendChild(span);
   listItem.appendChild(deleteButton);
+  listItem.style.cssText = 'display:flex;align-items:center;';
+  span.style.cssText = 'margin-right:auto;font-size:1rem;';
+  deleteButton.style.cssText = 'font-size:1rem;padding:5px 10px;color:white;background-color: rgb(129, 15, 15);';
+  // deleteButton.addEventListener('mouseover', () => {
+  //   if(deleteButton.style.backgroundColor !== 'rgb(100, 0, 0'){
+  //     deleteButton.style.backgroundColor = 'rgb(100, 0, 0)';
+  //   }else {
+  //     deleteButton.style.backgroundColor = 'rgb(129, 15, 15)';
+  //   }
+  // });
 
   span.textContent = inputValue;
   console.log(span.innerText);
   deleteButton.textContent = 'Delete';
-
 
   if(inputValue === ''){
     inputElement.setAttribute('placeholder', 'Cannot be empty!');
@@ -27,7 +36,6 @@ function btnClicked() {
     inputElement.setAttribute('placeholder', 'Add item to list!');
   }
   
-
   deleteButton.addEventListener('click', () => {
     ulEelment.removeChild(listItem);
   });

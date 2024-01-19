@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping list example</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
       li {
         margin-bottom: 10px;
@@ -15,47 +16,27 @@
         color: #666;
       }
     </style>
+
   </head>
   <body>
 
-    <h1>My shopping list</h1>
+    <div class="container">
+      <div class="heading">Shopping list</div>
+      <div class="inner-container">
+        <div class="top-row">
+          <input type="text" name="item" id="item">
+          <button class="add-item" onclick="btnClicked();">
+            Add item
+          </button>
+        </div>
+        <div class="items-div">
+          <ul>
 
-    <div>
-      <label for="item">Enter a new item:</label>
-      <input type="text" name="item" id="item">
-      <button onclick="btnClicked();" onkeydown="if(event.key === 'Enter') btnClicked();">Add item</button>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <ul>
-
-    </ul>
-
-    <script src="script.js">
-      // const ulEelment = document.querySelector('ul');
-      // const inputElement = document.querySelector('input');
-      // const btnElement = document.querySelector('button');
-
-      // function btnClicked() {
-      //   let inputValue = inputElement.value;
-      //   inputElement.value = '';
-
-      //   const listItem = document.createElement('li');
-      //   const span = document.createElement('span');
-      //   const deleteButton = document.createElement('button');
-
-      //   listItem.appendChild(span);
-      //   listItem.appendChild(deleteButton);
-
-      //   span.textContent = inputValue;
-      //   console.log(span.innerText);
-      //   deleteButton.textContent = 'Delete';
-
-      //   ulEelment.appendChild(listItem);
-
-      //   deleteButton.addEventListener('click', () => {
-      //     ulEelment.removeChild(listItem);
-      //   });
-      // }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
