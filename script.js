@@ -2,21 +2,26 @@ const ulEelment = document.querySelector('ul');
 const inputElement = document.querySelector('input');
 const btnElement = document.querySelector('button');
 
+btnElement.onclick = btnClicked;
+
 function btnClicked() {
   let inputValue = inputElement.value;
-  inputValue = '';
+  inputElement.value = '';
 
   const listItem = document.createElement('li');
   const span = document.createElement('span');
-  const button = document.createElement('button');
+  const deleteButton = document.createElement('button');
 
   listItem.appendChild(span);
-  listItem.appendChild(button);
+  listItem.appendChild(deleteButton);
 
   span.textContent = inputValue;
-  button.textContent = 'Delete';
+  console.log(span.innerText);
+  deleteButton.textContent = 'Delete';
 
   ulEelment.appendChild(listItem);
 
-  button.addEventListener('click', )
+  deleteButton.addEventListener('click', () => {
+    ulEelment.removeChild(listItem);
+  });
 }
