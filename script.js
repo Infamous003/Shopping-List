@@ -1,7 +1,7 @@
 const ulEelment = document.querySelector('ul');
 const inputElement = document.querySelector('input');
 const btnElement = document.querySelector('button');
-
+inputElement.setAttribute('placeholder', 'Add item to your list');
 btnElement.onclick = btnClicked;
 
 function btnClicked() {
@@ -20,7 +20,13 @@ function btnClicked() {
   deleteButton.textContent = 'Delete';
 
 
-  ulEelment.appendChild(listItem);
+  if(inputValue === ''){
+    inputElement.setAttribute('placeholder', 'Cannot be empty!');
+  }else {
+    ulEelment.appendChild(listItem);
+    inputElement.setAttribute('placeholder', 'Add item to list!');
+  }
+  
 
   deleteButton.addEventListener('click', () => {
     ulEelment.removeChild(listItem);
