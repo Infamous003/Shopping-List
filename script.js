@@ -19,6 +19,7 @@ function btnClicked() {
   console.log(span.innerText);
   deleteButton.textContent = 'Delete';
 
+
   ulEelment.appendChild(listItem);
 
   deleteButton.addEventListener('click', () => {
